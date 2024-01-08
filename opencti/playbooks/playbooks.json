@@ -1,0 +1,1108 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "db130672-b13e-497f-b572-a93e7aa5355a",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "f82d6f4b-7371-46c6-a65b-ec5ad5d16c62",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9dbc3ffc-0619-4059-a576-3752ee588f8b",
+                "title": "OpenCTI: Create Organization",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "56729a50-066c-4558-80e8-adfe8194814f",
+              "@type": "WorkflowStep",
+              "name": "Create Organization",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "name": "",
+                  "description": "",
+                  "reliability": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "create_organization",
+                "operationTitle": "Create Organization",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Create an Organization based on the parameters that you have specified.",
+          "name": "Create Organization",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f82d6f4b-7371-46c6-a65b-ec5ad5d16c62",
+          "routes": [
+            {
+              "uuid": "3876b7da-7f15-472d-aee2-8bbfeeb2c67a",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Organization",
+              "sourceStep": "/api/3/workflow_steps/f82d6f4b-7371-46c6-a65b-ec5ad5d16c62",
+              "targetStep": "/api/3/workflow_steps/56729a50-066c-4558-80e8-adfe8194814f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "88bb2b42-392a-4be6-b0e4-0316b166318e",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "10b43433-80c1-4641-b630-52ce731fad1b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c83f1cfe-a09c-407d-915f-dcb2c4f45fab",
+                "title": "OpenCTI: Get Organizations",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "17b68f51-141b-4e32-8a31-89bdcded07aa",
+              "@type": "WorkflowStep",
+              "name": "Get Organizations",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "end_cursor_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "get_organizations",
+                "operationTitle": "Get Organizations",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves detailed list of organizations based on the parameters that you have specified.",
+          "name": "Get Organizations",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/10b43433-80c1-4641-b630-52ce731fad1b",
+          "routes": [
+            {
+              "uuid": "8164c4d9-ab00-4cea-8ab3-889634b5b528",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Organizations",
+              "sourceStep": "/api/3/workflow_steps/10b43433-80c1-4641-b630-52ce731fad1b",
+              "targetStep": "/api/3/workflow_steps/17b68f51-141b-4e32-8a31-89bdcded07aa"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b2be5c63-e2ea-4121-b904-155929236bd5",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "456c4457-276a-4aef-aafb-4b66d743691b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4d82d5f1-aa2b-4806-b351-8969f60394e1",
+                "title": "OpenCTI: Create Label",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cdd5c2c4-4ce6-49f4-98ee-6ec5c6aff435",
+              "@type": "WorkflowStep",
+              "name": "Create Label",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "name": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "create_label",
+                "operationTitle": "Create Label",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Create a label based on the parameters that you have specified.",
+          "name": "Create Label",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/456c4457-276a-4aef-aafb-4b66d743691b",
+          "routes": [
+            {
+              "uuid": "b014ddbc-eb01-41dc-812f-acf6f048871e",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Label",
+              "sourceStep": "/api/3/workflow_steps/456c4457-276a-4aef-aafb-4b66d743691b",
+              "targetStep": "/api/3/workflow_steps/cdd5c2c4-4ce6-49f4-98ee-6ec5c6aff435"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "40fa1708-a293-45c6-8533-32b776b36d1a",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "86d46b6f-3705-48aa-a504-183d249e5448",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c640535a-46de-4704-80ef-7270d41484db",
+                "title": "OpenCTI: Get Labels",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a3951330-c43b-4ca7-84d3-038420d40cfa",
+              "@type": "WorkflowStep",
+              "name": "Get Labels",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "end_cursor_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "get_labels",
+                "operationTitle": "Get Labels",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves detailed list of labels based on the parameters that you have specified.",
+          "name": "Get Labels",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/86d46b6f-3705-48aa-a504-183d249e5448",
+          "routes": [
+            {
+              "uuid": "c251d918-556a-4e84-bef7-e35e5b16163f",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Labels",
+              "sourceStep": "/api/3/workflow_steps/86d46b6f-3705-48aa-a504-183d249e5448",
+              "targetStep": "/api/3/workflow_steps/a3951330-c43b-4ca7-84d3-038420d40cfa"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ff698b47-c254-4e11-963a-fe5ffac13524",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "df990cec-b288-440d-946d-bda0f07e128a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "a2b41841-65ca-4085-b476-c84edc4d4617",
+                "title": "OpenCTI: Create External Reference",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "83f603dd-86f5-452f-b161-66169ab27f03",
+              "@type": "WorkflowStep",
+              "name": "Create External Reference",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "url": "",
+                  "name": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "create_external_reference",
+                "operationTitle": "Create External Reference",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Create an external reference object based on the parameters that you have specified.",
+          "name": "Create External Reference",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/df990cec-b288-440d-946d-bda0f07e128a",
+          "routes": [
+            {
+              "uuid": "4ae4377f-a1da-414a-8ad7-0afe1945271d",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create External Reference",
+              "sourceStep": "/api/3/workflow_steps/df990cec-b288-440d-946d-bda0f07e128a",
+              "targetStep": "/api/3/workflow_steps/83f603dd-86f5-452f-b161-66169ab27f03"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2bc63174-81dd-4c4f-a8b7-9be07e41fed1",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "947101c7-e0c5-422d-a439-da8e1e157411",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "44897b29-8257-4e05-91c3-8ec5973be300",
+                "title": "OpenCTI: Get External References",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ce23fe02-4cfa-4923-89be-bea1e80277ec",
+              "@type": "WorkflowStep",
+              "name": "Get External References",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "end_cursor_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "get_external_references",
+                "operationTitle": "Get External References",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves detailed list of external reference objects based on the parameters that you have specified.",
+          "name": "Get External References",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/947101c7-e0c5-422d-a439-da8e1e157411",
+          "routes": [
+            {
+              "uuid": "6097fa0d-5ae3-4a2b-bcfc-9ecff886c55a",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get External References",
+              "sourceStep": "/api/3/workflow_steps/947101c7-e0c5-422d-a439-da8e1e157411",
+              "targetStep": "/api/3/workflow_steps/ce23fe02-4cfa-4923-89be-bea1e80277ec"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "92d25d66-950f-44a8-a9af-909dc71a18dd",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "b72a3448-e251-4b92-807f-33b6892c82f9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "539917ce-2764-40ba-8402-33701ec38430",
+                "title": "OpenCTI: Get Marking Definition",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "62aec170-a691-4aa9-9965-e702f3ba8a29",
+              "@type": "WorkflowStep",
+              "name": "Get Marking Definition",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "end_cursor_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "get_marking_definition",
+                "operationTitle": "Get Marking Definition",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves detailed list of marking definition objects based on the parameters that you have specified.",
+          "name": "Get Marking Definition",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b72a3448-e251-4b92-807f-33b6892c82f9",
+          "routes": [
+            {
+              "uuid": "7a1b980f-983a-4ec5-b638-ffb61678b34f",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Marking Definition",
+              "sourceStep": "/api/3/workflow_steps/b72a3448-e251-4b92-807f-33b6892c82f9",
+              "targetStep": "/api/3/workflow_steps/62aec170-a691-4aa9-9965-e702f3ba8a29"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6eff3f51-af2f-4da7-8770-fcd14e969fce",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "97e9d96a-62c1-47fb-9d4f-20b0b83a42cb",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "5948f582-56c5-44d1-ab3c-959b00165380",
+                "title": "OpenCTI: Create Indicator",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e30c2219-a403-41a6-ac69-59f54ace5d1e",
+              "@type": "WorkflowStep",
+              "name": "Create Indicator",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "type": "",
+                  "value": "",
+                  "description": "",
+                  "score": 50,
+                  "created_by": "",
+                  "marking_id": "",
+                  "label_id": "",
+                  "external_reference_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "create_indicator",
+                "operationTitle": "Create Indicator",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Create an indicator based on the parameters that you have specified.",
+          "name": "Create Indicator",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/97e9d96a-62c1-47fb-9d4f-20b0b83a42cb",
+          "routes": [
+            {
+              "uuid": "361f4f5e-0fe0-4c39-86c1-876d62080574",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Indicator",
+              "sourceStep": "/api/3/workflow_steps/97e9d96a-62c1-47fb-9d4f-20b0b83a42cb",
+              "targetStep": "/api/3/workflow_steps/e30c2219-a403-41a6-ac69-59f54ace5d1e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a052f7c0-4564-43c4-b877-58c9d74b2b64",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "e297fa34-b847-44af-9d0b-0f1d244571af",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "0ceaa789-abe8-43ca-9de2-e545c85e22b5",
+                "title": "OpenCTI: Get Indicators",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1afebefa-a5d9-4fae-af43-c15ebc62866e",
+              "@type": "WorkflowStep",
+              "name": "Get Indicators",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "end_cursor_id": "",
+                  "type": "",
+                  "min_score": "",
+                  "max_score": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "get_indicators",
+                "operationTitle": "Get Indicators",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves detailed list of indicators based on the parameters that you have specified.",
+          "name": "Get Indicators",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e297fa34-b847-44af-9d0b-0f1d244571af",
+          "routes": [
+            {
+              "uuid": "7a73fdeb-5124-4162-9d62-62a8d9a19479",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Indicators",
+              "sourceStep": "/api/3/workflow_steps/e297fa34-b847-44af-9d0b-0f1d244571af",
+              "targetStep": "/api/3/workflow_steps/1afebefa-a5d9-4fae-af43-c15ebc62866e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e3fad254-1235-4916-a214-7daa922d5d2f",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "ecf57f1f-aecc-4df6-9686-e6d145aea4de",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "a4bf5cba-b4a5-48a4-96bc-9a8c27fb3110",
+                "title": "OpenCTI: Delete Indicator",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "33d7b513-bce2-46a1-9b0a-f49fcaee98e7",
+              "@type": "WorkflowStep",
+              "name": "Delete Indicator",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "indicator_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "delete_indicator",
+                "operationTitle": "Delete Indicator",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Delete indicator based on the indicator ID that you have specified.",
+          "name": "Delete Indicator",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ecf57f1f-aecc-4df6-9686-e6d145aea4de",
+          "routes": [
+            {
+              "uuid": "e7834a05-983c-4bc8-a72a-2dc527c0b45b",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Indicator",
+              "sourceStep": "/api/3/workflow_steps/ecf57f1f-aecc-4df6-9686-e6d145aea4de",
+              "targetStep": "/api/3/workflow_steps/33d7b513-bce2-46a1-9b0a-f49fcaee98e7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2f027120-68f8-4607-9c07-9a3498729496",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "0703aa34-7c8e-41ed-83ee-47ea88ac903c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c776e390-fbb4-4ad7-8d43-4306c8c47b51",
+                "title": "OpenCTI: Add Indicator Field",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1520ada3-af12-4f86-a783-96dd6df5da11",
+              "@type": "WorkflowStep",
+              "name": "Add Indicator Field",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "indicator_id": "",
+                  "field": "",
+                  "field_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "add_indicator_field",
+                "operationTitle": "Add Indicator Field",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Add a field to the indicator. Fields that can be added are marking definition and label.",
+          "name": "Add Indicator Field",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0703aa34-7c8e-41ed-83ee-47ea88ac903c",
+          "routes": [
+            {
+              "uuid": "88ba705f-58fe-44dd-bcae-3d40b2dd99d9",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Indicator Field",
+              "sourceStep": "/api/3/workflow_steps/0703aa34-7c8e-41ed-83ee-47ea88ac903c",
+              "targetStep": "/api/3/workflow_steps/1520ada3-af12-4f86-a783-96dd6df5da11"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c8767542-54c1-41d3-a1ef-c927014258c5",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "d10292bd-c223-4f40-a5bc-65bd8b961f82",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b6d9e68f-ba3a-4169-98cd-56938167f32f",
+                "title": "OpenCTI: Update Indicator Field",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4d11ba43-0f5b-4c27-9ef8-a8d714a2fdfa",
+              "@type": "WorkflowStep",
+              "name": "Update Indicator Field",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "indicator_id": "",
+                  "field": "",
+                  "field_value": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "update_indicator_field",
+                "operationTitle": "Update Indicator Field",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Update the indicator field. Fields that can be updated are score and description.",
+          "name": "Update Indicator Field",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d10292bd-c223-4f40-a5bc-65bd8b961f82",
+          "routes": [
+            {
+              "uuid": "fb3c1b71-8ff0-494e-baeb-b1e728872d8e",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Indicator Field",
+              "sourceStep": "/api/3/workflow_steps/d10292bd-c223-4f40-a5bc-65bd8b961f82",
+              "targetStep": "/api/3/workflow_steps/4d11ba43-0f5b-4c27-9ef8-a8d714a2fdfa"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "cbe67a92-0d6f-48d1-bafb-3bd5e322f6bd",
+          "collection": "/api/3/workflow_collections/6b2d6036-05eb-4848-abd0-89e1e4726ef0",
+          "steps": [
+            {
+              "uuid": "ee7413f4-03af-44d8-b00f-312809262fca",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "25a7604f-34e7-4f12-9f6f-578387ce9436",
+                "title": "OpenCTI: Remove Indicator Field",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "8c9dae99-4253-423f-a98c-b179dc67d084",
+              "@type": "WorkflowStep",
+              "name": "Remove Indicator Field",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenCTI",
+                "config": "''",
+                "params": {
+                  "indicator_id": "",
+                  "field": "",
+                  "field_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "opencti",
+                "operation": "remove_indicator_field",
+                "operationTitle": "Remove Indicator Field",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Remove indicator field value. Field values which can be removed are marking definition and label.",
+          "name": "Remove Indicator Field",
+          "tag": "#OpenCTI",
+          "recordTags": [
+            "Opencti",
+            "opencti"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ee7413f4-03af-44d8-b00f-312809262fca",
+          "routes": [
+            {
+              "uuid": "8be146cb-d8d1-4dac-b31c-1a4cb671edc9",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Indicator Field",
+              "sourceStep": "/api/3/workflow_steps/ee7413f4-03af-44d8-b00f-312809262fca",
+              "targetStep": "/api/3/workflow_steps/8c9dae99-4253-423f-a98c-b179dc67d084"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - OpenCTI - 1.0.0",
+      "description": "OpenCTI is an open threat intelligence platform where you can store, organize, visualize and share knowledge about cyber threats.",
+      "visible": true,
+      "recordTags": [
+        "Opencti",
+        "opencti"
+      ]
+    }
+  ]
+}

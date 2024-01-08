@@ -1,0 +1,843 @@
+{
+  "name": "opencti",
+  "version": "1.0.0",
+  "label": "OpenCTI",
+  "category": "Threat Intelligence",
+  "description": "OpenCTI is an open threat intelligence platform where you can store, organize, visualize and share knowledge about cyber threats.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "Specify the server URL to connect and perform the automated operations.",
+        "tooltip": "Specify the server URL to connect and perform the automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "value": ""
+      },
+      {
+        "title": "Access Token",
+        "name": "access_token",
+        "description": "Specify the access token to connect and perform the automated operations.",
+        "tooltip": "Specify the access token to connect and perform the automated operations.",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "value": ""
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to True.",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "create_organization",
+      "annotation": "create_organization",
+      "title": "Create Organization",
+      "description": "Create an Organization based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization Name",
+          "name": "name",
+          "type": "text",
+          "description": "Specify the name of the organization that you want to create.",
+          "tooltip": "Specify the name of the organization that you want to create.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Organization Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of the organization that you want to create.",
+          "tooltip": "Specify the description of the organization that you want to create.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Reliability",
+          "name": "reliability",
+          "tooltip": "Specify the reliability of the organization. Possible values are: A, B, C, D, E, F, where is most reliable and F is least reliable.",
+          "description": "Specify the reliability of the organization. Possible values are: A, B, C, D, E, F, where is most reliable and F is least reliable.",
+          "type": "select",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "standard_id": "",
+        "entity_type": "",
+        "parent_types": [],
+        "createdById": ""
+      }
+    },
+    {
+      "operation": "get_organizations",
+      "annotation": "get_organizations",
+      "title": "Get Organizations",
+      "description": "Retrieves detailed list of organizations based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "Specify the maximum number of organizations to be returned in response. Default value is 50",
+          "tooltip": "Specify the maximum number of organizations to be returned in response. Default value is 50",
+          "value": 50,
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "End Cursor ID",
+          "name": "end_cursor_id",
+          "type": "text",
+          "description": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "tooltip": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "entities": [
+          {
+            "id": "",
+            "standard_id": "",
+            "entity_type": "",
+            "parent_types": [],
+            "spec_version": "",
+            "created_at": "",
+            "updated_at": "",
+            "createdBy": {
+              "id": "",
+              "standard_id": "",
+              "entity_type": "",
+              "parent_types": [],
+              "spec_version": "",
+              "identity_class": "",
+              "name": "",
+              "description": "",
+              "roles": "",
+              "contact_information": "",
+              "x_opencti_aliases": "",
+              "x_opencti_reliability": "",
+              "created": "",
+              "modified": "",
+              "objectLabel": [],
+              "x_opencti_organization_type": "",
+              "objectLabelIds": []
+            },
+            "objectMarking": [
+              {
+                "id": "",
+                "standard_id": "",
+                "entity_type": "",
+                "definition_type": "",
+                "definition": "",
+                "created": "",
+                "modified": "",
+                "x_opencti_order": "",
+                "x_opencti_color": "",
+                "createdById": ""
+              }
+            ],
+            "objectLabel": [],
+            "externalReferences": [],
+            "revoked": "",
+            "confidence": "",
+            "created": "",
+            "modified": "",
+            "identity_class": "",
+            "name": "",
+            "description": "",
+            "x_opencti_aliases": "",
+            "x_opencti_reliability": "",
+            "contact_information": "",
+            "x_opencti_organization_type": "",
+            "createdById": "",
+            "objectMarkingIds": [],
+            "objectLabelIds": [],
+            "externalReferencesIds": []
+          }
+        ],
+        "pagination": {
+          "startCursor": "",
+          "endCursor": "",
+          "hasNextPage": "",
+          "hasPreviousPage": "",
+          "globalCount": ""
+        }
+      }
+    },
+    {
+      "operation": "create_label",
+      "annotation": "create_label",
+      "title": "Create Label",
+      "description": "Create a label based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Label Name",
+          "name": "name",
+          "type": "text",
+          "description": "Specify the name of the label that you want to create.",
+          "tooltip": "Specify the name of the label that you want to create.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "value": "",
+        "color": "",
+        "created_at": "",
+        "updated_at": "",
+        "standard_id": "",
+        "createdById": ""
+      }
+    },
+    {
+      "operation": "get_labels",
+      "annotation": "get_labels",
+      "title": "Get Labels",
+      "description": "Retrieves detailed list of labels based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "Specify the maximum number of labels to be returned in response. Default value is 50",
+          "tooltip": "Specify the maximum number of labels to be returned in response. Default value is 50",
+          "value": 50,
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "End Cursor ID",
+          "name": "end_cursor_id",
+          "type": "text",
+          "description": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "tooltip": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "entities": [
+          {
+            "id": "",
+            "value": "",
+            "color": "",
+            "created_at": "",
+            "updated_at": "",
+            "standard_id": "",
+            "createdById": ""
+          }
+        ],
+        "pagination": {
+          "startCursor": "",
+          "endCursor": "",
+          "hasNextPage": "",
+          "hasPreviousPage": "",
+          "globalCount": ""
+        }
+      }
+    },
+    {
+      "operation": "create_external_reference",
+      "annotation": "create_external_reference",
+      "title": "Create External Reference",
+      "description": "Create an external reference object based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "External Reference URL",
+          "name": "url",
+          "type": "text",
+          "description": "Specify the external reference URL of the external reference object that you want to create.",
+          "tooltip": "Specify the external reference URL of the external reference object that you want to create.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Source Name",
+          "name": "name",
+          "type": "text",
+          "description": "Specify the source name of the external reference object that you want to create.",
+          "tooltip": "Specify the source name of the external reference object that you want to create.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "standard_id": "",
+        "entity_type": "",
+        "parent_types": [],
+        "created_at": "",
+        "updated_at": "",
+        "created": "",
+        "modified": "",
+        "source_name": "",
+        "description": "",
+        "url": "",
+        "hash": "",
+        "external_id": "",
+        "createdById": ""
+      }
+    },
+    {
+      "operation": "get_external_references",
+      "annotation": "get_external_references",
+      "title": "Get External References",
+      "description": "Retrieves detailed list of external reference objects based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "Specify the maximum number of external reference objects to be returned in response. Default value is 50",
+          "tooltip": "Specify the maximum number of external reference objects to be returned in response. Default value is 50",
+          "value": 50,
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "End Cursor ID",
+          "name": "end_cursor_id",
+          "type": "text",
+          "description": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "tooltip": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "entities": [
+          {
+            "id": "",
+            "standard_id": "",
+            "entity_type": "",
+            "parent_types": [],
+            "created_at": "",
+            "updated_at": "",
+            "created": "",
+            "modified": "",
+            "source_name": "",
+            "description": "",
+            "url": "",
+            "hash": "",
+            "external_id": "",
+            "createdById": ""
+          }
+        ],
+        "pagination": {
+          "startCursor": "",
+          "endCursor": "",
+          "hasNextPage": "",
+          "hasPreviousPage": "",
+          "globalCount": ""
+        }
+      }
+    },
+    {
+      "operation": "get_marking_definition",
+      "annotation": "get_marking_definition",
+      "title": "Get Marking Definition",
+      "description": "Retrieves detailed list of marking definition objects based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "Specify the maximum number of marking definition objects to be returned in response. Default value is 50",
+          "tooltip": "Specify the maximum number of marking definition objects to be returned in response. Default value is 50",
+          "value": 50,
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "End Cursor ID",
+          "name": "end_cursor_id",
+          "type": "text",
+          "description": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "tooltip": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "entities": [
+          {
+            "id": "",
+            "standard_id": "",
+            "entity_type": "",
+            "parent_types": [],
+            "definition_type": "",
+            "definition": "",
+            "x_opencti_order": "",
+            "x_opencti_color": "",
+            "created": "",
+            "modified": "",
+            "created_at": "",
+            "updated_at": "",
+            "createdById": ""
+          }
+        ],
+        "pagination": {
+          "startCursor": "",
+          "endCursor": "",
+          "hasNextPage": "",
+          "hasPreviousPage": "",
+          "globalCount": ""
+        }
+      }
+    },
+    {
+      "operation": "create_indicator",
+      "annotation": "create_indicator",
+      "title": "Create Indicator",
+      "description": "Create an indicator based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Indicator Type",
+          "name": "type",
+          "type": "select",
+          "description": "Specify the type of indicator that you want to create. You can select one of the following options: Account, Domain, Email, File-MD5, File-SHA1, File-SHA256, Host, IPv4, IPv6, Registry Key, URL",
+          "tooltip": "Specify the type of indicator that you want to create.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Account",
+            "Domain",
+            "Email",
+            "File-MD5",
+            "File-SHA1",
+            "File-SHA256",
+            "Host",
+            "IPv4",
+            "IPv6",
+            "Registry Key",
+            "URL"
+          ]
+        },
+        {
+          "title": "Indicator Value",
+          "name": "value",
+          "type": "text",
+          "description": "Specify the value of indicator that you want to create.",
+          "tooltip": "Specify the value of indicator that you want to create.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of indicator that you want to create.",
+          "tooltip": "Specify the description of indicator that you want to create.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Score",
+          "name": "score",
+          "type": "integer",
+          "description": "Specify the score of indicator that you want to create. Score range is 0 to 100. Default value is 50.",
+          "tooltip": "Specify the score of indicator that you want to create. Score range is 0 to 100. Default value is 50.",
+          "value": 50,
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Created By",
+          "name": "created_by",
+          "type": "text",
+          "description": "Specify the organization ID. Use 'Get Organizations' to find all organization IDs or use 'Create Organization' to create a new organization ID.",
+          "tooltip": "Specify the organization ID. Use 'Get Organizations' to find all organization IDs or use 'Create Organization' to create a new organization ID.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Marking Definition ID",
+          "name": "marking_id",
+          "tooltip": "Specify the marking definition ID. Use 'Get Marking Definition' to find all marking definition IDs.",
+          "description": "Specify the marking definition ID. Use 'Get Marking Definition' to find all marking definition IDs.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Label ID",
+          "name": "label_id",
+          "type": "text",
+          "description": "Specify the label ID. Use 'Get Labels' to find all label IDs or use 'Create Label' to create a new label ID.",
+          "tooltip": "Specify the label ID. Use 'Get Labels' to find all label IDs or use 'Create Label' to create a new label ID.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "External Reference ID",
+          "name": "external_reference_id",
+          "type": "text",
+          "description": "Specify the external reference ID. Use 'Get External References' to find all external reference IDs or use 'Create External Reference' to create a new external reference ID.",
+          "tooltip": "Specify the external reference ID. Use 'Get External References' to find all external reference IDs or use 'Create External Reference' to create a new external reference ID.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "standard_id": "",
+        "entity_type": "",
+        "parent_types": [],
+        "indicators": [],
+        "createdById": "",
+        "indicatorsIds": []
+      }
+    },
+    {
+      "operation": "get_indicators",
+      "annotation": "get_indicators",
+      "title": "Get Indicators",
+      "description": "Retrieves detailed list of indicators based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "Specify the maximum number of indicators to be returned in response. Default value is 50",
+          "tooltip": "Specify the maximum number of indicators to be returned in response. Default value is 50",
+          "value": 50,
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "End Cursor ID",
+          "name": "end_cursor_id",
+          "type": "text",
+          "description": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "tooltip": "Specify the endCursor ID of the pagination from the previous call, from which to begin pagination for this call. eg: WyJpZGVudGl0eS0tMjJmYjkwNTUtZjAzNi01MmFlLWJiZTktM2QyYmZlODk1MDI4Il0=",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Indicator Type",
+          "name": "type",
+          "type": "multiselect",
+          "description": "Specify the indicator type that you want to filter by. You can select one of the following options: Account, Domain, Email, File-MD5, File-SHA1, File-SHA256, Host, IPv4, IPv6, Registry Key, URL",
+          "tooltip": "Specify the indicator type that you want to filter by.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Account",
+            "Domain",
+            "Email",
+            "File-MD5",
+            "File-SHA1",
+            "File-SHA256",
+            "Host",
+            "IPv4",
+            "IPv6",
+            "Registry Key",
+            "URL"
+          ]
+        },
+        {
+          "title": "Minimum Score",
+          "name": "min_score",
+          "type": "integer",
+          "description": "Specify the minimum score value to filter by. Values range is 1 to 100.",
+          "tooltip": "Specify the minimum score value to filter by. Values range is 1 to 100.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Maximum Score",
+          "name": "max_score",
+          "type": "integer",
+          "description": "Specify the maximum score value to filter by. Values range is 1 to 100.",
+          "tooltip": "Specify the maximum score value to filter by. Values range is 1 to 100.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "entities": [
+          {
+            "id": "",
+            "standard_id": "",
+            "entity_type": "",
+            "parent_types": [],
+            "spec_version": "",
+            "created_at": "",
+            "updated_at": "",
+            "creators": [
+              {
+                "id": "",
+                "name": ""
+              }
+            ],
+            "createdBy": "",
+            "objectMarking": [],
+            "objectLabel": [],
+            "externalReferences": [],
+            "observable_value": "",
+            "x_opencti_description": "",
+            "x_opencti_score": "",
+            "indicators": [],
+            "value": "",
+            "createdById": "",
+            "objectMarkingIds": [],
+            "objectLabelIds": [],
+            "externalReferencesIds": [],
+            "indicatorsIds": []
+          }
+        ],
+        "pagination": {
+          "startCursor": "",
+          "endCursor": "",
+          "hasNextPage": "",
+          "hasPreviousPage": "",
+          "globalCount": ""
+        }
+      }
+    },
+    {
+      "operation": "delete_indicator",
+      "annotation": "delete_indicator",
+      "title": "Delete Indicator",
+      "description": "Delete indicator based on the indicator ID that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Indicator ID",
+          "name": "indicator_id",
+          "type": "text",
+          "description": "Specify the ID of the indicator that you want to delete.",
+          "tooltip": "Specify the ID of the indicator that you want to delete.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "message": ""
+      }
+    },
+    {
+      "operation": "add_indicator_field",
+      "annotation": "add_indicator_field",
+      "title": "Add Indicator Field",
+      "description": "Add a field to the indicator. Fields that can be added are marking definition and label.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Indicator ID",
+          "name": "indicator_id",
+          "type": "text",
+          "description": "Specify the ID of the indicator for which you want to add the fields.",
+          "tooltip": "Specify the ID of the indicator for which you want to add the fields.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Field",
+          "name": "field",
+          "type": "select",
+          "description": "Select the field that you want to add to the indicator. You can select one of the following: Marking Definition, Label.",
+          "tooltip": "Select the field that you want to add to the indicator.",
+          "options": [
+            "Marking Definition",
+            "Label"
+          ],
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Field ID",
+          "name": "field_id",
+          "type": "text",
+          "description": "Specify marking definition ID or label ID. Use 'Get Marking Definition' or 'Get Labels' action to find the ID.",
+          "tooltip": "Specify marking definition ID or label ID. Use 'Get Marking Definition' or 'Get Labels' action to find the ID.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "message": ""
+      }
+    },
+    {
+      "operation": "update_indicator_field",
+      "annotation": "update_indicator_field",
+      "title": "Update Indicator Field",
+      "description": "Update the indicator field. Fields that can be updated are score and description.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Indicator ID",
+          "name": "indicator_id",
+          "type": "text",
+          "description": "Specify the ID of the indicator for which you want to update the field.",
+          "tooltip": "Specify the ID of the indicator for which you want to update the field.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Field",
+          "name": "field",
+          "type": "select",
+          "description": "Select the field that you want to update. You can select one of the following: Score, Description.",
+          "tooltip": "Select the field that you want to update. You can select one of the following: Score, Description.",
+          "options": [
+            "Score",
+            "Description"
+          ],
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Field Value",
+          "name": "field_value",
+          "type": "text",
+          "description": "Specify the value of the field that you want to update.",
+          "tooltip": "Specify the value of the field that you want to update.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "standard_id": "",
+        "entity_type": "",
+        "createdById": ""
+      }
+    },
+    {
+      "operation": "remove_indicator_field",
+      "annotation": "remove_indicator_field",
+      "title": "Remove Indicator Field",
+      "description": "Remove indicator field value. Field values which can be removed are marking definition and label.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Indicator ID",
+          "name": "indicator_id",
+          "type": "text",
+          "description": "Specify the ID of the indicator for which you want to remove the field value.",
+          "tooltip": "Specify the ID of the indicator for which you want to remove the field value.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Field",
+          "name": "field",
+          "type": "select",
+          "description": "Select the field that you want to remove from the indicator. You can select one of the following: Marking Definition, Label.",
+          "tooltip": "Select the field that you want to add from the indicator.",
+          "options": [
+            "Marking Definition",
+            "Label"
+          ],
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Field ID",
+          "name": "field_id",
+          "type": "text",
+          "description": "Specify marking definition ID or label ID. Use 'Get Marking Definition' or 'Get Labels' action to find the ID.",
+          "tooltip": "Specify marking definition ID or label ID. Use 'Get Marking Definition' or 'Get Labels' action to find the ID.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "message": ""
+      }
+    }
+  ]
+}
