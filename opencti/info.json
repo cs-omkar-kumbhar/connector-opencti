@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "label": "OpenCTI",
   "category": "Threat Intelligence",
-  "description": "",
+  "description": "OpenCTI is an open threat intelligence platform where you can store, organize, visualize and share knowledge about cyber threats.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,

@@ -1097,7 +1097,7 @@
         }
       ],
       "name": "Sample - OpenCTI - 1.0.0",
-      "description": "",
+      "description": "OpenCTI is an open threat intelligence platform where you can store, organize, visualize and share knowledge about cyber threats.",
       "visible": true,
       "recordTags": [
         "Opencti",
