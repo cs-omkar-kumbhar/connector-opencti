@@ -221,7 +221,6 @@ def remove_indicator_field(config, params):
             id=params.get("indicator_id"),
             label_id=params.get("field_id")
         )
-    logger.error(f"\n-----------------------------\nresult: {result}")
     if result:  # result is returned as True or False
         return {"message": "success"}
     else:
