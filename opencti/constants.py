@@ -29,3 +29,12 @@ UPDATE_FIELDS = {
     "description": "x_opencti_description",
     "score": "x_opencti_score"
 }
+
+RELIABILITY = {
+    "a - completely reliable": "A - Completely reliable",
+    "b - usually reliable": "B - Usually reliable",
+    "c - fairly reliable": "C - Fairly reliable",
+    "d - not usually reliable": "D - Not usually reliable",
+    "e - unreliable": "E - Unreliable",
+    "f - reliability cannot be judged": "F - Reliability cannot be judged"
+}

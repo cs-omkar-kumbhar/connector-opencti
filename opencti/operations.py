@@ -33,12 +33,15 @@ class OpenCTI:
 def create_organization(config, params):
     ob = OpenCTI(config)
     params = ob.build_params(params)
+    reliability = params.get("reliability")
+    if reliability:
+        reliability = RELIABILITY.get(reliability.lower())
     identity = Identity(ob.open_cti)
     result = identity.create(
         name=params.get("name"),
         type="Organization",
         description=params.get("description"),
-        x_opencti_reliability=params.get("reliability")
+        x_opencti_reliability=reliability
     )
     return result
 
@@ -60,7 +63,7 @@ def create_label(config, params):
     ob = OpenCTI(config)
     params = ob.build_params(params)
     result = ob.open_cti.label.create(
-        value=params.get("name")
+        value=str(params.get("name"))
     )
     return result
 
@@ -198,7 +201,7 @@ def update_indicator_field(config, params):
     field = UPDATE_FIELDS.get(params.get("field").lower())
     result = ob.open_cti.stix_cyber_observable.update_field(
         id=params.get("indicator_id"),
-        input={"key": field, "value": params.get("value")}
+        input={"key": field, "value": params.get("field_value")}
     )
     return result
 
@@ -218,6 +221,7 @@ def remove_indicator_field(config, params):
             id=params.get("indicator_id"),
             label_id=params.get("field_id")
         )
+    logger.error(f"\n-----------------------------\nresult: {result}")
     if result:  # result is returned as True or False
         return {"message": "success"}
     else:

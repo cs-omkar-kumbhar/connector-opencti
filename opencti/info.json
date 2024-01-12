@@ -79,16 +79,16 @@
         {
           "title": "Reliability",
           "name": "reliability",
-          "tooltip": "Specify the reliability of the organization. Possible values are: A, B, C, D, E, F, where is most reliable and F is least reliable.",
-          "description": "Specify the reliability of the organization. Possible values are: A, B, C, D, E, F, where is most reliable and F is least reliable.",
+          "tooltip": "Specify the reliability of the organization.",
+          "description": "Specify the reliability of the organization. Possible values are: 'A - Completely reliable', 'B - Usually reliable', 'C - Fairly reliable', 'D - Not usually reliable', 'E - Unreliable', 'F - Reliability cannot be judged'.",
           "type": "select",
           "options": [
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F"
+            "A - Completely reliable",
+            "B - Usually reliable",
+            "C - Fairly reliable",
+            "D - Not usually reliable",
+            "E - Unreliable",
+            "F - Reliability cannot be judged"
           ],
           "visible": true,
           "editable": true,
@@ -815,7 +815,7 @@
           "name": "field",
           "type": "select",
           "description": "Select the field that you want to remove from the indicator. You can select one of the following: Marking Definition, Label.",
-          "tooltip": "Select the field that you want to add from the indicator.",
+          "tooltip": "Select the field that you want to remove from the indicator.",
           "options": [
             "Marking Definition",
             "Label"
