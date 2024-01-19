@@ -115,7 +115,7 @@ def create_indicator(config, params):
     ob = OpenCTI(config)
     params = ob.build_params(params)
     indicator_type = params.get("type")
-    value = params.get("value")
+    value = str(params.get("value"))
     data = {"type": INDICATOR_TYPES.get(indicator_type.lower()), "value": value}
     if indicator_type == 'Registry Key':
         data["key"] = value
