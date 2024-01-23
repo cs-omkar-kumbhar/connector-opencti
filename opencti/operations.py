@@ -116,6 +116,9 @@ def create_indicator(config, params):
     params = ob.build_params(params)
     indicator_type = params.get("type")
     value = str(params.get("value"))
+    description = params.get("description")
+    if description:
+        description = str(description)
     data = {"type": INDICATOR_TYPES.get(indicator_type.lower()), "value": value}
     if indicator_type == 'Registry Key':
         data["key"] = value
@@ -135,7 +138,7 @@ def create_indicator(config, params):
         objectMarking=params.get("marking_id"),
         objectLabel=params.get("label_id"),
         externalReferences=params.get("external_reference_id"),
-        simple_observable_description=params.get("description"),
+        simple_observable_description=description,
         x_opencti_score=params.get("score", 50),
         observableData=data
     )
