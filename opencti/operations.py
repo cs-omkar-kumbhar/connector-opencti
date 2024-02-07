@@ -152,6 +152,7 @@ def get_indicators(config, params):
     filters = []
     min_score = str(params.get("min_score", ""))
     max_score = str(params.get("max_score", ""))
+    search_value = str(params.get("search_value", ""))
     indicator_types = [INDICATOR_TYPES.get(ind_type.lower()) for ind_type in params.get("type", [])]
     if min_score:
         filters.append({"key": "x_opencti_score", "values": [min_score], "operator": "gte", "mode": "or"})
@@ -159,6 +160,8 @@ def get_indicators(config, params):
         filters.append({"key": "x_opencti_score", "values": [max_score], "operator": "lte", "mode": "or"})
     if indicator_types:
         filters.append({"key": "entity_type", "values": indicator_types, "operator": "eq", "mode": "or"})
+    if search_value:
+        filters.append({"key": "value", "values": [search_value], "operator": "eq", "mode": "or"})
     filters = {"mode": "and", "filterGroups": [], "filters": filters} if filters else None
 
     result = ob.open_cti.stix_cyber_observable.list(

@@ -1,13 +1,13 @@
 {
   "name": "opencti",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "label": "OpenCTI",
   "category": "Threat Intelligence",
   "description": "OpenCTI is an open threat intelligence platform where you can store, organize, visualize and share knowledge about cyber threats.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/opencti/769/opencti-v1-0-0",
+  "help_online": "",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "configuration": {
@@ -566,6 +566,16 @@
       "category": "investigation",
       "enabled": true,
       "parameters": [
+        {
+          "title": "Search By Value",
+          "name": "search_value",
+          "type": "text",
+          "description": "Specify the value of indicator to filter results retrieved from the OpenCTI server database.",
+          "tooltip": "Specify the value of indicator to filter results retrieved from the OpenCTI server database.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
         {
           "title": "Limit",
           "name": "limit",
