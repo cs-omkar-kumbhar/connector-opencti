@@ -50,7 +50,7 @@
                   "description": "",
                   "reliability": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "create_organization",
                 "operationTitle": "Create Organization",
@@ -133,7 +133,7 @@
                   "limit": 50,
                   "end_cursor_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "get_organizations",
                 "operationTitle": "Get Organizations",
@@ -215,7 +215,7 @@
                 "params": {
                   "name": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "create_label",
                 "operationTitle": "Create Label",
@@ -298,7 +298,7 @@
                   "limit": 50,
                   "end_cursor_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "get_labels",
                 "operationTitle": "Get Labels",
@@ -381,7 +381,7 @@
                   "url": "",
                   "name": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "create_external_reference",
                 "operationTitle": "Create External Reference",
@@ -464,7 +464,7 @@
                   "limit": 50,
                   "end_cursor_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "get_external_references",
                 "operationTitle": "Get External References",
@@ -547,7 +547,7 @@
                   "limit": 50,
                   "end_cursor_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "get_marking_definition",
                 "operationTitle": "Get Marking Definition",
@@ -636,7 +636,7 @@
                   "label_id": "",
                   "external_reference_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "create_indicator",
                 "operationTitle": "Create Indicator",
@@ -716,13 +716,14 @@
                 "name": "OpenCTI",
                 "config": "''",
                 "params": {
+                  "search_value": "",
                   "limit": 50,
                   "end_cursor_id": "",
                   "type": "",
                   "min_score": "",
                   "max_score": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "get_indicators",
                 "operationTitle": "Get Indicators",
@@ -804,7 +805,7 @@
                 "params": {
                   "indicator_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "delete_indicator",
                 "operationTitle": "Delete Indicator",
@@ -888,7 +889,7 @@
                   "field": "",
                   "field_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "add_indicator_field",
                 "operationTitle": "Add Indicator Field",
@@ -972,7 +973,7 @@
                   "field": "",
                   "field_value": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "update_indicator_field",
                 "operationTitle": "Update Indicator Field",
@@ -1056,7 +1057,7 @@
                   "field": "",
                   "field_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "opencti",
                 "operation": "remove_indicator_field",
                 "operationTitle": "Remove Indicator Field",
@@ -1096,7 +1097,7 @@
           ]
         }
       ],
-      "name": "Sample - OpenCTI - 1.0.0",
+      "name": "Sample - OpenCTI - 1.0.1",
       "description": "OpenCTI is an open threat intelligence platform where you can store, organize, visualize and share knowledge about cyber threats.",
       "visible": true,
       "recordTags": [
