@@ -7,7 +7,7 @@
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.1/opencti/788/opencti-v1-0-1",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "configuration": {
@@ -570,8 +570,8 @@
           "title": "Search By Value",
           "name": "search_value",
           "type": "text",
-          "description": "Specify the value of indicator to filter results retrieved from the OpenCTI server database.",
-          "tooltip": "Specify the value of indicator to filter results retrieved from the OpenCTI server database.",
+          "description": "Specify the value of the indicator to filter results retrieved from the OpenCTI server database.",
+          "tooltip": "Specify the value of the indicator to filter results retrieved from the OpenCTI server database.",
           "required": false,
           "editable": true,
           "visible": true
