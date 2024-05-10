@@ -115,6 +115,7 @@ def create_indicator(config, params):
     ob = OpenCTI(config)
     params = ob.build_params(params)
     indicator_type = params.get("type")
+    x_opencti_create_indicator = params.get("x_opencti_create_indicator")
     value = str(params.get("value"))
     description = params.get("description")
     if description:
@@ -124,6 +125,8 @@ def create_indicator(config, params):
         data["key"] = value
     if indicator_type == 'Account':
         data["account_login"] = value
+    if x_opencti_create_indicator:
+        data["x_opencti_create_indicator"] = True
     simple_observable_key = None
     simple_observable_value = None
     if "file" in indicator_type.lower():

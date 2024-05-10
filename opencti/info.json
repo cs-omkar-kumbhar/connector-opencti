@@ -487,6 +487,16 @@
           "visible": true
         },
         {
+          "title": "Associate Indicator To Observable",
+          "name": "x_opencti_create_indicator",
+          "type": "checkbox",
+          "description": "If checked and indicator entry will be created and associated with the observable",
+          "tooltip": "Specify the value of indicator being created on the OpenCTI server database.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },        
+        {
           "title": "Description",
           "name": "description",
           "type": "text",
