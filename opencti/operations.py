@@ -11,7 +11,7 @@ from .constants import *
 from pycti import OpenCTIApiClient, Identity
 
 logger = get_logger("opencti")
-logger.setLevel(logging.DEBUG) #Uncomment to enable to DEBUG
+#logger.setLevel(logging.DEBUG) #Uncomment to enable to DEBUG
 
 class OpenCTI:
     def __init__(self, config, *args, **kwargs):
