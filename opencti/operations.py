@@ -5,12 +5,13 @@ Copyright (c) 2024 Fortinet Inc
 Copyright end
 """
 
+import logging
 from connectors.core.connector import get_logger, ConnectorError
 from .constants import *
 from pycti import OpenCTIApiClient, Identity
 
 logger = get_logger("opencti")
-
+logger.setLevel(logging.DEBUG) #Uncomment to enable to DEBUG
 
 class OpenCTI:
     def __init__(self, config, *args, **kwargs):
@@ -145,6 +146,7 @@ def create_indicator(config, params):
         x_opencti_score=params.get("score", 50),
         observableData=data
     )
+    logger.debug("DATA>>>>>>>>>>>>>>>:{}".format(data))
     return result
 
 

@@ -1,6 +1,6 @@
 {
   "name": "opencti",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "label": "OpenCTI",
   "category": "Threat Intelligence",
   "description": "OpenCTI is an open threat intelligence platform where you can store, organize, visualize and share knowledge about cyber threats.",
