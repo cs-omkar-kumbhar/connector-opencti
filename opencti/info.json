@@ -490,7 +490,7 @@
           "title": "Associate Indicator To Observable",
           "name": "x_opencti_create_indicator",
           "type": "checkbox",
-          "description": "(Optional) Select to associate the indicator being created with the observable.",
+          "description": "Select to associate the indicator being created with the observable.",
           "tooltip": "Select to associate the indicator being created with the observable.",
           "required": false,
           "editable": true,
