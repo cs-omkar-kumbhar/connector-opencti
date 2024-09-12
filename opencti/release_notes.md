@@ -1,2 +1,2 @@
 #### What's New:
-- Added 'Associate Indicator To Observable' parameter in 'Create Indicator' action.
+- Added a new parameter Associate Indicator To Observable in the action Create Indicator.
